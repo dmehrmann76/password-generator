@@ -14,6 +14,21 @@ var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 function getPasswordOptions() {
   var length = parseInt(prompt('Please select up to 128 characters'));
 
+  if (isNaN(length) === true) { 
+    alert('Password length must be provided as a number');
+    return;
+  }
+
+  if (length < 8) { 
+    alert('Password length must be at least 8 characters');
+    return;
+  }
+
+  if (length > 128) { 
+    alert('Password must be less than 129 characters');
+    return;
+  }
+
   var hasSpecialCharacters = confirm('Click OK to include special characters.');
 
   var hasNumbers = confirm('Click OK to include numbers.'); 
